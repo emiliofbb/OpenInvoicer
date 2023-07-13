@@ -1,0 +1,249 @@
+:root{
+  --bg-color: white;
+  --text-color-vals: 0 0% 0%;
+  --text-color: black;
+  --complementary-color: white;
+  --hover-transition-time: 300ms;
+  --font-family: Consolas;
+  --error-color: hsla(0, 100%, 75%, 0.8);
+  --error-color-code: 0, 100%, 75%;
+  --ok-color-code: 125, 100%, 75%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: 0rem 1.25rem 0rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+header {
+  padding-top: 1rem;
+  padding-bottom: 0.4em;
+  border-bottom: 0.05em solid var(--text-color);
+  display: flex;
+  gap: 0.5rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  z-index: 2;
+}
+
+h1 {
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 2rem;
+  width: 10ch;
+  margin-block: 0;
+  flex-grow: 1;
+}
+
+.notification-container {
+  color: var(--text-color);
+  text-align: center;
+  width: 50%;
+  position: absolute;
+  left: 23%;
+  top: calc(100% + 1rem);
+  border-radius: 1em;
+  padding: 1rem;
+  font-family: var(--font-family);
+}
+
+.notification-container[data-info="none"] {
+  display: none;
+}
+
+.notification-container[data-info="saved"] {
+  display: inline;
+  background-color: hsla(var(--ok-color-code), 1);
+}
+
+.notification-container[data-info="error"] {
+  display: inline;
+  background-color: hsla(var(--error-color-code), 1);
+}
+
+h2 {
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 1.5rem;
+  margin-block: 0;
+  padding-bottom: 0.5em;
+}
+
+.form-container {
+  height: 100%;
+  width: 70ch;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.doc-type-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1rem 0;
+  gap: 0.3rem;
+  width: 50%;
+}
+
+.doc-type-container label { 
+  font-weight: 700;
+  font-size: large;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+form > p {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 0.3rem;
+  width: 30ch;
+}
+
+input {
+  flex-grow: 1;
+  border-radius: 0.75rem;
+  padding: 0.1rem 0.75rem;
+  outline: none;
+}
+
+input[data-error=true] {
+  background-color: var(--error-color);
+}
+
+input:focus {
+  outline: none !important;
+  border: 0.1rem solid var(--bg-color);
+  box-shadow: 0 0 0.5rem var(--text-color);
+}
+
+label {
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+}
+
+.form-btn {
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: var(--font-family);
+  border: 0.15em solid var(--complementary-color);
+  border-radius: 100vh;
+  padding: 0.2rem 2rem;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transition: background-color var(--hover-transition-time) ease-in, color var(--hover-transition-time) ease-in, border-color var(--hover-transition-time) ease-in;
+}
+
+.form-btn:hover {
+  background-color: var(--complementary-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.btn-disabled {
+  cursor: default;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  border: 0.15em solid var(--complementary-color);
+  border-radius: 100vh;
+  padding: 0.2rem 2rem;
+  background-color: gray;
+  color: var(--bg-color);
+  flex-basis: 25%;
+}
+
+.form-btn:focus {
+  outline: 0.2rem solid var(--text-color);
+}
+
+.client-form {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--text-color);
+}
+
+.product-form {
+  justify-content: center;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--text-color);
+}
+
+.product-form > p {
+  flex-basis: 100%;
+}
+
+.product-btn {
+  flex-basis: 25%;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  table-layout: fixed;
+  margin-bottom: 1.5rem;
+}
+
+table, td, th {
+  border: 1px solid var(--text-color);
+}
+
+th, td {
+  padding: 0.3em;
+}
+
+thead th:nth-child(1) {
+  width: 60%;
+}
+
+thead th:nth-child(2), thead th:nth-child(3) {
+  width: 20%;
+}
+
+.product-row {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--hover-transition-time) ease-in, color var(--hover-transition-time) ease-in;
+}
+
+tfoot th {
+  text-align: end;
+}
+
+.division-line {
+  background-color: var(--text-color);
+  height: 1px;
+  width: 100vw;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.espacio {
+  height: 50rem;
+  font-size: 1px;
+}

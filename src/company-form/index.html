@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Facturador 3400</title>
+  </head>
+  <body>
+    <span class="division-line"></span>
+    <header>
+      <h1>Facturador</h1>
+      <button class="form-btn" onclick="saveCompany()">Guardar</button>
+      <button class="form-btn" onclick="reloadCompany()">Reiniciar</button>
+      <div
+        class="notification-container"
+        data-info="none"
+        id="notification-center"
+      >
+        El documento ha sido guardado correctamente.
+      </div>
+    </header>
+    <div class="form-container">
+      <h2>Información de la Empresa</h2>
+      <form>
+        <p>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" />
+        </p>
+        <p>
+          <label for="code">CIF:</label>
+          <input type="text" id="code" />
+        </p>
+        <p>
+          <label for="email">Email:</label>
+          <input type="email" id="email" />
+        </p>
+        <p>
+          <label for="telephone">Teléfono:</label>
+          <input type="tel" id="telephone" />
+        </p>
+        <p>
+          <label for="street">Dirección:</label>
+          <input type="text" id="street" />
+        </p>
+        <p>
+          <label for="city">Ciudad:</label>
+          <input type="text" id="city" />
+        </p>
+        <p>
+          <label for="country">País:</label>
+          <input type="text" id="country" />
+        </p>
+      </form>
+      <div class="logo-container">
+        <img id="logo-img" src="" class="logo-img" />
+        <button class="form-btn" onclick="selectLogo()">
+          Seleccione un Logo
+        </button>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

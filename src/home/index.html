@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Facturador 3400</title>
+  </head>
+  <body>
+    <span class="division-line"></span>
+    <header>
+      <h1>Facturador</h1>
+    </header>
+    <section class="invoices-section">
+      <div id="lasts-invoices-container" class="lasts-invoices-container"></div>
+    </section>
+    <section class="buttons-container">
+      <button
+        id="new-invoice"
+        class="btn-invoice"
+        onclick="openNewInvoiceWindow()"
+      >
+        Nueva Factura
+      </button>
+      <button
+        id="company-info"
+        class="btn-invoice"
+        onclick="openCompanyInfoWindow()"
+      >
+        Información de la Empresa
+      </button>
+      <!--<button id="all-invoices" class="btn-invoice">Todas las facturas</button>-->
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

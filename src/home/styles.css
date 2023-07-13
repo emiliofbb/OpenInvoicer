@@ -1,0 +1,150 @@
+:root{
+  --bg-color: white;
+  --text-color-vals: 0 0% 0%;
+  --text-color: black;
+  --complementary-color: white;
+  --hover-transition-time: 300ms;
+  --font-family: Consolas;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: 0rem 1.25rem 0rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+header {
+  padding-bottom: 0.2em;
+  border-bottom: 0.05em solid var(--text-color);
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  z-index: 2;
+}
+
+h1 {
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 2rem;
+  width: 10ch;
+  margin-block: 0;
+}
+
+.lasts-invoices-container {
+  flex-grow: 1;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(22em, 1fr));
+  gap: 1.5rem;
+}
+
+.button-card {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  text-align: start;
+  color: inherit;
+  font-family: var(--font-family);
+  cursor: pointer;
+  width: 100%;
+}
+
+.invoices-section {
+  flex-grow: 1;
+}
+
+.invoice-card {
+  overflow-x: hidden;
+  width: auto;
+  height: auto;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 0.5em 0.5em;
+  border-radius: 0.75rem;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 0.15rem solid var(--text-color);
+  box-shadow: 0.1rem 0.1rem 0.5rem 0.05rem hsla(var(--text-color-vals) /.5);
+  transition: background-color var(--hover-transition-time) ease-in, color var(--hover-transition-time) ease-in, border-color var(--hover-transition-time) ease-in;
+}
+
+.invoice-card:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--complementary-color);
+}
+
+.invoice-card h2 {
+  margin: 0em 0em 0.5em 0em;
+  font-size: 1.75rem;
+  width: 100%;
+}
+
+.value-highligth {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.invoice-card p {
+  font-size: 0.75rem;
+  font-weight: 1000;
+  margin: 0em;
+  width: 100%;
+}
+
+.buttons-container {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  background-color: var(--bg-color);
+  margin: 0em;
+  flex-wrap: wrap;
+}
+
+.btn-invoice {
+  flex: 1;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: var(--font-family);
+  border: 0.15em solid var(--complementary-color);
+  border-radius: 100vh;
+  padding: 0.3em 2em;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transition: background-color var(--hover-transition-time) ease-in, color var(--hover-transition-time) ease-in, border-color var(--hover-transition-time) ease-in;
+}
+
+.btn-invoice:hover {
+  background-color: var(--complementary-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.division-line {
+  background-color: var(--text-color);
+  height: 1px;
+  width: 100vw;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}

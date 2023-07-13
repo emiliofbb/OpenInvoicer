@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Facturador 3400</title>
+  </head>
+  <body>
+    <span class="division-line"></span>
+    <header>
+      <h1>Facturador</h1>
+      <button class="form-btn" onclick="saveInvoice()">Guardar</button>
+      <button class="form-btn" onclick="exportInvoice()">Exportar</button>
+      <button class="form-btn" onclick="cleanFields()">Reiniciar</button>
+      <div
+        class="notification-container"
+        data-info="none"
+        id="notification-center"
+      >
+        El documento ha sido guardado correctamente.
+      </div>
+    </header>
+    <div class="form-container">
+      <div class="doc-type-container">
+        <label for="doc-type">Tipo de Documento:</label>
+        <select id="doc-type">
+          <option value="Factura" selected="true">Factura</option>
+          <option value="Presupuesto">Presupuesto</option>
+        </select>
+      </div>
+      <h2>Información del Cliente</h2>
+      <form class="client-form" action="no-action">
+        <p>
+          <label for="name">Nombre del Cliente:</label>
+          <input type="text" id="name" data-error="false" />
+        </p>
+        <p>
+          <label for="street">Dirección del Cliente:</label>
+          <input type="text" id="street" />
+        </p>
+        <p>
+          <label for="city">Ciudad del Cliente:</label>
+          <input type="text" id="city" />
+        </p>
+        <p>
+          <label for="country">País del Cliente:</label>
+          <input type="text" id="country" />
+        </p>
+      </form>
+      <h2>Formulario de Productos</h2>
+      <form class="product-form">
+        <p>
+          <label for="product-name">Nombre del Producto:</label>
+          <input type="text" id="product-name" />
+        </p>
+        <p>
+          <label for="product-qty">Cantidad:</label>
+          <input type="text" id="product-qty" />
+        </p>
+        <p>
+          <label for="product-price">Precio Unitario:</label>
+          <input type="text" id="product-price" />
+        </p>
+        <button class="form-btn product-btn" id="add-prod">Añadir</button>
+        <button class="btn-disabled" id="modify-prod">Modificar</button>
+        <button class="btn-disabled" id="delete-prod">Eliminar</button>
+      </form>
+      <h2>Productos</h2>
+      <table class="products-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody id="products-container">
+          <tr class="product-row">
+            <td colspan="3" style="text-align: center">
+              Sin Productos Añadidos
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="2">Total con IVA(21%)</th>
+            <th id="total-price">0</th>
+          </tr>
+        </tfoot>
+      </table>
+      <p class="espacio">.</p>
+    </div>
+    <script src="./currency.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
